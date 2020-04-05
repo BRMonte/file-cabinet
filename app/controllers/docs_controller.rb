@@ -11,7 +11,7 @@ class DocsController < ApplicationController
   end
 
   def new
-    @doc = current_user.docs.build
+    @doc = Doc.new
   end
 
   def create
@@ -27,6 +27,7 @@ class DocsController < ApplicationController
 
   def edit
     # no need to write anything cause before_action has all taken
+    @doc = find_doc
   end
 
   def update

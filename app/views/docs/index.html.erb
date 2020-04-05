@@ -1,1 +1,9 @@
 <h1>Index</h1>
+<% @docs.each do |doc| %>
+  <%= doc.title  %>
+  <%= doc.content %>
+  <%= time_ago_in_words(doc.created_at) %>
+  <%= truncate(doc.content, length:50) %>
+<% end %>
+
+<%= link_to "Create doc", new_doc_path %>

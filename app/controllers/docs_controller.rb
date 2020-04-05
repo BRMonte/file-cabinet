@@ -3,10 +3,11 @@ class DocsController < ApplicationController
   before_action :find_doc, only: [:show, :edit, :update, :destroy]
 
   def index
+    @docs = Doc.all.order("created_at DESC") #organizes it from date + descending order
   end
 
   def show
-    @doc = Doc.find_doc
+    # no need to write anything cause before_action has all taken
   end
 
   def new
@@ -25,12 +26,20 @@ class DocsController < ApplicationController
   end
 
   def edit
+    # no need to write anything cause before_action has all taken
   end
 
   def update
+    if @doc.update(doc_params)
+      redirect_to @doc
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @doc.destroy
+    redirect_to docs_path
   end
 
   private

@@ -1,1 +1,12 @@
-<h1>Edit</h1>
+<div class="edit-form container">
+  <div class=" form row justify-content-center">
+    <div class="col-md-8">
+      <h1>Edit your doc here</h1>
+
+      <%= render 'form'  %>
+      <br>
+      <button><%= link_to "Delete", @doc, method: :delete%></button>
+
+    </div>
+  </div>
+</div>

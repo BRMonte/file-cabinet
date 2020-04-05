@@ -10,8 +10,19 @@
   </head>
 
   <body>
+    <header>
+      <%= link_to "FileCabinet", root_path, id: "logo" %>
+      <nav>
+        <% if user_signed_in? %>
+          <%= link_to "Create doc", new_doc_path %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Log in", new_user_session_path %>
+        <% end %>
+      </nav>
+    </header>
 
-    <p class="notice"><%= notice %></p>
+    <p class="notice"><%= notice%></p>
     <p class="alert"><%= alert %></p>
 
     <%= yield %>

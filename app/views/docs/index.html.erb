@@ -1,9 +1,20 @@
-<h1>Index</h1>
-<% @docs.each do |doc| %>
-  <%= doc.title  %>
-  <%= doc.content %>
-  <%= time_ago_in_words(doc.created_at) %>
-  <%= truncate(doc.content, length:50) %>
-<% end %>
+<div class="wrapper_with_padding">
+  <div id="docs" class="clearfix">
+    <% unless @docs.blank? %>
+      <% @docs.each do |doc| %>
+       <a { href: (url_for [doc])}></a>
+        <div class="doc">
+         <p class="title"><%= doc.title %></p>
+         <p class="date"><%= time_ago_in_words(doc.created_at)%></p>
+         <p class="content"><%= truncate(doc.content, length:50) %></p>
+        </div>
+      <% end %>
+    <% else %>
+    <h2>Create Doc!</h2>
+    <p>Start creating documents and organizing your life!</p>
+    <button><%= link_to "Create Doc", new_doc_path %></button>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to "Create doc", new_doc_path %>
+

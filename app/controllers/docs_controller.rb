@@ -7,7 +7,7 @@ class DocsController < ApplicationController
   end
 
   def show
-    # no need to write anything cause before_action has all taken
+    # no need to write anything cause before_action has all taken care of
   end
 
   def new

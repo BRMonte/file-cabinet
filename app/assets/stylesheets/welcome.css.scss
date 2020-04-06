@@ -65,7 +65,7 @@
     float: left;
     h2 {
       @include bold_font;
-      color: white;
+      color: black;
       margin-bottom: 0;
     }
     p {
@@ -75,6 +75,7 @@
 }
 
 #bottom_cta {
+  background-image: url('callout_backgroung.jpg');
   text-align: center;
   padding: 7.5rem 0;
   h2 {

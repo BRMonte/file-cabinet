@@ -1,10 +1,28 @@
+<header>
+  <div class="header_inner">
+    <a href="/" id="logo">File Cabinet</a>
+    <nav>
+      <a href="/users/sign_in">Log In</a>
+    </nav>
+  </div>
+</header>
+
 <div id="banner">
   <div class="banner_content">
     <h1>File Cabinet</h1>
     <p>Your life's work. Organized, always</p>
-    <button><%= link_to "Enter", new_user_registration_path %></button>
+    <button><%= link_to "Enter", new_user_registration_path, class: "button" %></button>
   </div>
 </div>
+
+<div id="bottom_cta">
+  <div class="wrapper">
+    <h2>Go Ahead!</h2>
+    <br>
+    <button> <%= link_to "Join Now", new_user_registration_path, class: "button"%></button>
+  </div>
+</div>
+
 
 <div id="callouts">
   <div class="callout_inner">
@@ -17,10 +35,3 @@
   </div>
 </div>
 
-<div id="bottom_cta">
-  <div class="wrapper">
-    <h2>Go Ahead!</h2>
-    <br>
-    <button> <%= link_to "Join Now", new_user_registration_path%></button>
-  </div>
-</div>
